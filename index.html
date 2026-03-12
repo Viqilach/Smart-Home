@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home · Mi Hogar Inteligente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@300..600,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ <!-- INTERRUPTOR DE TEMA (oculto, solo para funcionalidad) --> 
+<input type="checkbox" id="interruptorTema">
+<div class="contenedor-app">
+
+  <!-- BARRA LATERAL (tablet/escritorio) -->
+  <aside class="barra-lateral">
+    <div class="lateral-logo">
+      <div class="lateral-logo-icono">
+        <span class="material-symbols-rounded icon-fill" style="color:white">home</span>
+      </div>
+      <div>
+        <div class="lateral-logo-nombre">Smart Home</div>
+        <div class="lateral-logo-sub">Panel de control</div>
+      </div>
+    </div>
+
+    <div class="lateral-etiqueta-seccion">Principal</div>
+
+    <nav class="lateral-navegacion">
+      <a href="#" class="activo">
+        <span class="material-symbols-rounded icon-fill">dashboard</span>
+        Dashboard
+      </a>
+      <a href="#">
+        <span class="material-symbols-rounded">thermostat</span>
+        Temperatura
+      </a>
+      <a href="#">
+        <span class="material-symbols-rounded">electric_bolt</span>
+        Energía
+      </a>
+      <a href="#">
+        <span class="material-symbols-rounded">shield</span>
+        Seguridad
+      </a>
+      <a href="#">
+        <span class="material-symbols-rounded">videocam</span>
+        Cámaras
+      </a>
+      <div class="lateral-etiqueta-seccion" style="padding-left:0; margin-top:0.5rem">Sistema</div>
+      <a href="#">
+        <span class="material-symbols-rounded">settings</span>
+        Configuración
+      </a>
+    </nav>
+
+    <div class="lateral-pie">
+      <div class="lateral-usuario">
+        <img src="/Resources/AvatarVL.png" alt="Avatar" class="avatar-img">
+        <div>
+          <div class="lateral-usuario-nombre">Administrador</div>
+          <div class="lateral-usuario-rol">Casa Principal</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="contenido-principal">
+
+    <header class="cabecera">
+      <a class="cabecera-logo" href="#">
+        <div class="icono-logo">
+          <span class="material-symbols-rounded icon-fill" style="color:white; font-size:1em">home</span>
+        </div>
+        <div>
+          <div class="nombre-logo">Smart Home</div>
+          <div class="subtitulo-logo">Mi Hogar Inteligente</div>
+        </div>
+      </a>
+      <div class="acciones-cabecera">
+        <label class="interruptor-tema" for="interruptorTema" title="Cambiar modo día/noche">
+          <span class="material-symbols-rounded icon-sm" style="color:var(--amarillo-400)">light_mode</span>
+          <div class="interruptor-contenedor">
+            <div class="interruptor-pista">
+              <div class="interruptor-pulgar"></div>
+            </div>
+          </div>
+          <span class="material-symbols-rounded icon-sm" style="color:var(--color-acento)">dark_mode</span>
+        </label>
+        <button class="boton-icono" title="Notificaciones">
+          <span class="material-symbols-rounded">notifications</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="cuerpo-pagina">
+
+      <!-- Banner sistema activo -->
+      <div class="banner-sistema">
+        <div class="banner-sistema-icono">
+          <span class="material-symbols-rounded icon-fill">security</span>
+        </div>
+        <div>
+          <div class="banner-sistema-titulo">Sistema activado</div>
+          <div class="banner-sistema-subtitulo">Todas las alarmas y sensores operativos</div>
+        </div>
+      </div>
+
+      <div class="etiqueta-seccion">Resumen del hogar</div>
+
+      <!-- CUADRÍCULA DE WIDGETS -->
+      <div class="cuadricula-widgets">
+
+        <!-- 1. Temperatura -->
+        <div class="tarjeta">
+          <div class="tarjeta-cabecera">
+            <div class="tarjeta-icono" style="background-color:rgba(249,115,22,0.12)">
+              <span class="material-symbols-rounded icon-fill" style="color:#F97316">thermostat</span>
+            </div>
+            <span class="tarjeta-etiqueta">Temperatura</span>
+          </div>
+          <div class="temperatura-grande">22°C</div>
+          <div class="temperatura-stats">
+            <span class="temperatura-stat">
+              <span class="material-symbols-rounded icon-sm" style="color:var(--color-info)">water_drop</span>
+              Humedad 48%
+            </span>
+            <span class="temperatura-stat">
+              <span class="material-symbols-rounded icon-sm" style="color:var(--color-aviso)">device_thermostat</span>
+              Sensación 21°C
+            </span>
+          </div>
+        </div>
+
+        <!-- 2. Luces -->
+        <div class="tarjeta">
+          <div class="tarjeta-cabecera">
+            <div class="tarjeta-icono" style="background-color:rgba(234,179,8,0.12)">
+              <span class="material-symbols-rounded icon-fill" style="color:var(--amarillo-400)">lightbulb</span>
+            </div>
+          </div>
+          <div class="tarjeta-valor">12 <span class="tarjeta-valor-unidad">encendidas</span></div>
+          <div class="pastillas-contenedor">
+            <span class="pastilla">Salón</span>
+            <span class="pastilla">Cocina</span>
+            <span class="pastilla">Baño</span>
+            <span class="pastilla">+9</span>
+          </div>
+        </div>
+
+        <!-- 3. Seguridad -->
+        <div class="tarjeta">
+          <div class="tarjeta-cabecera">
+            <div class="tarjeta-icono" style="background-color:rgba(16,185,129,0.12)">
+              <span class="material-symbols-rounded icon-fill" style="color:var(--color-exito)">security</span>
+            </div>
+            <span class="etiqueta-estado etiqueta-exito">
+              ACTIVO
+            </span>
+          </div>
+          <div class="tarjeta-valor" style="font-size:var(--texto-2xl)">Seguridad</div>
+          <div class="tarjeta-subtexto">Sin alertas</div>
+        </div>
+
+        <!-- 4. Consumo energético -->
+        <div class="tarjeta">
+          <div class="tarjeta-cabecera">
+            <div class="tarjeta-icono" style="background-color:var(--color-acento-suave)">
+              <span class="material-symbols-rounded icon-fill" style="color:var(--color-acento)">electric_bolt</span>
+            </div>
+            <span class="etiqueta-estado etiqueta-exito">-12% vs ayer</span>
+          </div>
+          <div class="tarjeta-valor">4.8 <span class="tarjeta-valor-unidad">kWh</span></div>
+          <div class="tarjeta-subtexto">Consumo actual</div>
+          <div class="grafico-mini">
+            <div class="barra-mini" style="height:40%"></div>
+            <div class="barra-mini" style="height:62%"></div>
+            <div class="barra-mini" style="height:45%"></div>
+            <div class="barra-mini" style="height:80%"></div>
+            <div class="barra-mini" style="height:55%"></div>
+            <div class="barra-mini alta" style="height:30%"></div>
+          </div>
+        </div>
+
+        <!-- 5. Cámaras -->
+        <div class="tarjeta tarjeta-ancha">
+          <div class="tarjeta-cabecera">
+            <div style="display:flex; align-items:center; gap:var(--espacio-3)">
+              <div class="tarjeta-icono" style="background-color:var(--color-entrada)">
+                <span class="material-symbols-rounded" style="color:var(--color-texto-secundario)">videocam</span>
+              </div>
+              <div>
+                <div class="tarjeta-titulo">Cámaras</div>
+                <div class="tarjeta-subtitulo">2 activas · En vivo</div>
+              </div>
+            </div>
+            <button class="boton-ver-todas">Ver todas →</button>
+          </div>
+          <div class="camaras-cuadricula">
+            <div class="camara-miniatura">
+              <img src="/Resources/EntradaPrincipal.png" alt="Entrada principal">
+              <div class="camara-degradado"></div>
+              <span class="camara-nombre">Entrada principal</span>
+              <span class="camara-en-vivo">● LIVE</span>
+            </div>
+            <div class="camara-miniatura">
+              <img src="/Resources/Sala.png" alt="Sala">
+              <div class="camara-degradado"></div>
+              <span class="camara-nombre">Sala</span>
+              <span class="camara-en-vivo">● LIVE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Calidad del Aire -->
+        <div class="tarjeta">
+          <div class="tarjeta-cabecera">
+            <div class="tarjeta-icono" style="background-color:rgba(6,182,212,0.12)">
+              <span class="material-symbols-rounded icon-fill" style="color:var(--color-info)">air</span>
+            </div>
+            <span class="tarjeta-etiqueta">Calidad del Aire</span>
+          </div>
+          <div class="aire-anillo-contenedor">
+            <div class="anillo-wrapper">
+              <svg class="anillo-svg" viewBox="0 0 36 36">
+                <circle class="anillo-fondo" cx="18" cy="18" r="15.9155" fill="none" stroke-width="3"/>
+                <circle class="anillo-relleno" cx="18" cy="18" r="15.9155" fill="none" stroke-width="3"/>
+              </svg>
+              <div class="anillo-centro">
+                <span class="anillo-valor">32</span>
+                <span class="anillo-unidad">AQI</span>
+              </div>
+            </div>
+            <div class="aire-estado">Excelente</div>
+            <div class="aire-co2">CO₂ 412 ppm</div>
+          </div>
+        </div>
+
+        <!-- 7. Rutinas rápidas -->
+        <div class="tarjeta">
+          <div class="tarjeta-cabecera">
+            <div class="tarjeta-icono" style="background-color:var(--color-acento-suave)">
+              <span class="material-symbols-rounded icon-fill" style="color:var(--color-acento)">bolt</span>
+            </div>
+            <span class="tarjeta-titulo">Rutinas</span>
+          </div>
+          <div class="rutinas-cuadricula">
+            <button class="boton-rutina">
+              <span class="material-symbols-rounded icon-fill" style="color:var(--color-acento)">bedtime</span>
+              Modo noche
+            </button>
+            <button class="boton-rutina">
+              <span class="material-symbols-rounded" style="color:var(--color-aviso)">logout</span>
+              Salir de casa
+            </button>
+            <button class="boton-rutina">
+              <span class="material-symbols-rounded icon-fill" style="color:var(--amarillo-400)">sunny</span>
+              Despertar
+            </button>
+            <button class="boton-rutina">
+              <span class="material-symbols-rounded icon-fill" style="color:var(--color-exito)">eco</span>
+              Ahorro
+            </button>
+          </div>
+        </div>
+
+        <!-- 8. Puertas y Accesos -->
+        <div class="tarjeta tarjeta-ancha">
+          <div class="tarjeta-cabecera">
+            <div style="display:flex; align-items:center; gap:var(--espacio-3)">
+              <div class="tarjeta-icono" style="background-color:var(--color-entrada)">
+                <span class="material-symbols-rounded" style="color:var(--color-texto-secundario)">door_front</span>
+              </div>
+              <div>
+                <div class="tarjeta-titulo">Puertas y Accesos</div>
+                <div class="tarjeta-subtitulo">1 abierta · 2 cerradas</div>
+              </div>
+            </div>
+          </div>
+          <div class="lista-puertas">
+            <div class="fila-puerta">
+              <div class="puerta-izquierda">
+                <span class="material-symbols-rounded icon-sm">sensor_door</span>
+                <span class="puerta-nombre">Entrada principal</span>
+              </div>
+              <span class="puerta-estado puerta-abierta">
+                <span class="material-symbols-rounded icon-fill icon-sm">lock_open</span>
+                ABIERTA
+              </span>
+            </div>
+            <div class="fila-puerta">
+              <div class="puerta-izquierda">
+                <span class="material-symbols-rounded icon-sm">garage</span>
+                <span class="puerta-nombre">Garaje</span>
+              </div>
+              <span class="puerta-estado puerta-cerrada">
+                <span class="material-symbols-rounded icon-fill icon-sm">lock</span>
+                CERRADA
+              </span>
+            </div>
+            <div class="fila-puerta">
+              <div class="puerta-izquierda">
+                <span class="material-symbols-rounded icon-sm">yard</span>
+                <span class="puerta-nombre">Patio</span>
+              </div>
+              <span class="puerta-estado puerta-cerrada">
+                <span class="material-symbols-rounded icon-fill icon-sm">lock</span>
+                CERRADA
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. WiFi -->
+        <div class="tarjeta">
+          <div class="tarjeta-cabecera">
+            <div class="tarjeta-icono" style="background-color:rgba(139,92,246,0.12)">
+              <span class="material-symbols-rounded icon-fill" style="color:var(--color-morado)">wifi</span>
+            </div>
+            <span class="etiqueta-estado etiqueta-morado">
+              ONLINE
+            </span>
+          </div>
+          <div class="tarjeta-valor" style="font-size:var(--texto-2xl)">WiFi 6</div>
+          <div class="tarjeta-subtexto">4 dispositivos conectados</div>
+          <div class="wifi-barras">
+            <div class="barra-wifi activa" style="height:30%"></div>
+            <div class="barra-wifi activa" style="height:50%"></div>
+            <div class="barra-wifi activa" style="height:70%"></div>
+            <div class="barra-wifi activa" style="height:90%"></div>
+            <div class="barra-wifi" style="height:70%"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVEGACIÓN MÓVIL -->
+<nav class="navegacion-movil">
+  <button class="elemento-nav activo">
+    <span class="material-symbols-rounded icon-fill">dashboard</span>
+    Inicio
+  </button>
+  <button class="elemento-nav">
+    <span class="material-symbols-rounded">devices</span>
+    Dispositivos
+  </button>
+  <button class="elemento-nav">
+    <span class="material-symbols-rounded">wifi</span>
+    WiFi
+  </button>
+  <button class="elemento-nav">
+    <span class="material-symbols-rounded">bolt</span>
+    Rutinas
+  </button>
+  <button class="elemento-nav">
+    <span class="material-symbols-rounded">settings</span>
+    Ajustes
+  </button>
+</nav>
+
+</body>
+</html>
