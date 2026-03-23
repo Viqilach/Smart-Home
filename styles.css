@@ -471,14 +471,14 @@ a {
 }
 
 /* Pastillas de habitaciones */
-.pastillas-contenedor {
+.indicadores-contenedor {
   display: flex;
   flex-wrap: wrap;
   gap: var(--espacio-1);
   margin-top: var(--espacio-2);
 }
 
-.pastilla {
+.indicador {
   font-size: var(--texto-xs);
   font-weight: 700;
   padding: 0.25rem 0.7rem;
